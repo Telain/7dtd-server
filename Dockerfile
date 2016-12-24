@@ -4,16 +4,21 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y
 
 # Install dependencies, mainly for SteamCMD
-RUN apt-get install --no-install-recommends -y \
+RUN apt-get install -y \
     ca-certificates \
     software-properties-common \
     python-software-properties \
     lib32gcc1 \
+    libstdc++6 \
     xvfb \
     curl \
     wget \
     telnet \
-    expect
+    bsdtar \
+    nginx \
+    build-essential \
+    expect \
+    libgdiplus
 
 # Run as root
 USER root
